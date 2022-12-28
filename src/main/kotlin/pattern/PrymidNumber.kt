@@ -1,42 +1,52 @@
 package pattern
 
 /*
-              1
-             222
-            33333
-           4444444
-          555555555
-         66666666666
-        7777777777777
-       888888888888888
-      99999999999999999
-     10101010101010101010101010101010101010
-    111111111111111111111111111111111111111111
-   1212121212121212121212121212121212121212121212
-  13131313131313131313131313131313131313131313131313
- 141414141414141414141414141414141414141414141414141414
-1515151515151515151515151515151515151515151515151515151515
+                1
+                            2 2 2
+                          2 2 2 2 2
+                        3 3 3 3 3 3 3
+                      3 3 3 3 3 3 3 3 3
+                    3 3 3 3 3 3 3 3 3 3 3
+                  4 4 4 4 4 4 4 4 4 4 4 4 4
+                4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+              4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+            4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+          5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+      5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+  5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
  */
 class PrymidNumber {
 
-    fun printPrymid(number:Int){
-        val temp = (number*(number+1))/2
-        var ans = 1
+    fun pattern(n: Int) {
+        var colCount = 1
 
-        for(row in 1 ..temp ){
-            for(space in 1 ..  temp-row){
-                print(" ")
+        val rowCount = (n * (n + 1)) / 2 // sum of N natural numbers
+
+        var numToPrint = 1
+        var loopExecutionCount = 0
+
+        for (row in 0 until rowCount) {
+            for (spaces in 0 until rowCount - row) {
+                print("  ")
             }
-            for (col in 1 .. 2*row-1){
-                print(row)
+
+            for (elements in 0 until colCount) {
+                print("$numToPrint ")
             }
+            colCount += 2
             println()
-        }
 
+            if (++loopExecutionCount == numToPrint) {
+                numToPrint++
+                loopExecutionCount = 0
+            }
+        }
     }
 }
 
 fun main(){
     val prymidNumber = PrymidNumber()
-    prymidNumber.printPrymid(5)
+    prymidNumber.pattern(5)
 }
