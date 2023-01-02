@@ -3,24 +3,25 @@ package String
 import java.util.Stack
 
 class LongestPalindromicSubstring {
-    var max = 0
     var longestPolindrome =""
     val stacks = Stack<Int>()
-    fun longestPalindrome(s: String):Int {
+    fun longestPalindrome(s: String):String {
         stacks.push(0)
         for (i in 0..s.length - 2) {
-            for (j in i + 2..s.length) {
+            for (j in i + 1..s.length) {
                 val word = s.subSequence(i, j)
+                println(word)
                 if (checkPalindrom(word.toString())) {
                     val maxlength = word.length
                     if(maxlength>stacks.peek()||stacks.isEmpty()) {
                         stacks.pop()
                         stacks.push(word.length)
+                        longestPolindrome = word.toString()
                     }
                 }
             }
         }
-       return stacks.peek()
+       return longestPolindrome
     }
 
     fun checkPalindrom(string: String): Boolean {

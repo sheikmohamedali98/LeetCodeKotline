@@ -29,6 +29,25 @@ class ZigzagConversion {
 println(Arrays.toString(string))
 
     }
+
+
+    fun printArray(string: String, size:Int) {
+
+        var matrix = Array(4){CharArray(4)}
+        var top = 0
+        var bottom = 4-1
+        var length = 0
+        while (length<=string.length){
+
+            for(row in 0 ..bottom){
+
+            }
+        }
+
+//        for (row in 0 until size ){
+//            for(col in 0 )
+//        }
+    }
 }
 
 fun main(){
