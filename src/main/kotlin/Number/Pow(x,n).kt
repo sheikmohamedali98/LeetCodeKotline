@@ -25,16 +25,17 @@ class `Pow(x,n)` {
         println("num $num")
         var power: Long = Math.abs(n.toLong())
         var product: Double = num
-        var res: Double = 1.0
+        var result: Double = 1.0
         while (power > 0) {
             if (power%2 == 1L) {
-                res *= product
-                println("res $res")
+                result *= product
+                println("res $result")
             }
             power /= 2
             product *= product
+
         }
-        return res
+        return result
     }
 }
 
