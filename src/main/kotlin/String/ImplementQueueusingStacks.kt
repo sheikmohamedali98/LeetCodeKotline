@@ -33,6 +33,11 @@ class ImplementQueueusingStacks {
 
         return stack1.isEmpty()&&stack2.isEmpty()
     }
+
+
+
+
+
 }
 
 fun main(){

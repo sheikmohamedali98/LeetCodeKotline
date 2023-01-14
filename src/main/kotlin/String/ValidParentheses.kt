@@ -19,12 +19,10 @@ class ValidParentheses {
     fun validateParentheses(string: String):Boolean{
 
         val stack = Stack<Char>()
-
         for(ch in string.toCharArray()){
             if(map.containsKey(ch)){
                 stack.push(ch)
-            }else if (stack.isEmpty()||map.get(stack.pop())!=ch){
-
+            }else if (stack.isEmpty()|| map[stack.pop()] !=ch){
                 return false
             }
         }
