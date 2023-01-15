@@ -16,7 +16,6 @@ class WordPattern {
                     return false
                 }
             }else{
-
                 if(map.containsValue(stringArray[index])){
                     return false
                 }
