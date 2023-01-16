@@ -37,11 +37,9 @@ class InsertInterval {
             newList.add(intervals[index++])
         }
 
-
         while (index < intervals.size && intervals[index][0] <= end) {
             start = minOf(intervals[index][0], start)
             end = maxOf(intervals[index++][1], end)
-
         }
 
         newList.add(intArrayOf(start, end))
@@ -49,9 +47,7 @@ class InsertInterval {
         while (index < intervals.size) {
             newList.add(intervals[index++])
         }
-
         return newList.toTypedArray()
-
     }
 
 
