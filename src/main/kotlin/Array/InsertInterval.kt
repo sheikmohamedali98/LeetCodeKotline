@@ -2,9 +2,7 @@ package Array
 
 class InsertInterval {
 
-    //
     fun insert(intervals: Array<IntArray>, newInterval: IntArray) {
-
         var value = newInterval[0]
         var startIndex = 0
         val answer = IntArray(2)
@@ -19,11 +17,8 @@ class InsertInterval {
                 }
                 value = newInterval[1]
             }
-
         }
         println(answer.contentToString())
-
-
     }
 
     fun insert1(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray>{
@@ -60,6 +55,6 @@ fun main() {
     insertInterval.insert(interval, newInterval)
 
     insertInterval.insert1(interval, newInterval).forEach {
-        println(it.contentToString())
+        print("${it.contentToString()} ")
     }
 }
